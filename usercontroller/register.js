@@ -15,7 +15,7 @@ function Startbackend () {
        app.use(cors()); 
       // here i connect to mgdatabase  
       //  create Routes 
-            app.get('/register', async (req, res) => {
+            app.post('/register', async (req, res) => {
                const UserDetails ={
                   username:req.body.Username,
                   email:req.body.email,
