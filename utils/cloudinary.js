@@ -1,7 +1,11 @@
  
   import cloudinary from 'cloudinary';
-   import fs from 'fs';
+   import fs from 'fs-extra';
    import path from 'path'
+
+ 
+const filet = fs.readdirSync('./utils/img/elon.jfif');
+
 cloudinary.config({
   cloud_name: 'dzowrkbyj',
   api_key: '686495224159795',
@@ -17,7 +21,9 @@ function uploadToCloudinary(file) {
   } catch (err) {
     console.error('Unexpected error:', err);
   }
-}
-
+} 
 // Example usage:
-uploadToCloudinary('backendapp/img/elon.jfif
+uploadToCloudinary('backendapp/img/elon.jfif'); 
+module.exports={
+    uploadToCloudinary
+}
